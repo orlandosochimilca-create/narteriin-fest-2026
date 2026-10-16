@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narterinn Fest 2026 | Encuentro Académico de Producción Audiovisual</title>
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 100px;
+            border: 1px solid #334155;
+        }
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-primary);
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .timeline-date {
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        .timeline-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .timeline-content p {
+            color: var(--text-secondary);
+        }
+        .form-container {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-dark);
+            border: 1px solid #475569;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+        button {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: var(--accent-hover);
+        }
+        .note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .countdown { gap: 10px; }
+            .countdown-item { min-width: 70px; padding: 15px 10px; }
+            .countdown-number { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p style="color: var(--accent); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Encuentro académico de producción audiovisual</p>
+            <h1>Narterinn Fest 2026</h1>
+            <p class="subtitle">Los semilleros de investigación ruedan, editan y comparten. Inscribe tu reel o tu documental corto de hasta 5 minutos y muéstrale tu trabajo a la comunidad.</p>
+            
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary);">Para el cierre de postulaciones</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Calendario del Evento</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Desde hoy</div>
+                    <div class="timeline-content">
+                        <h4>Postulaciones abiertas</h4>
+                        <p>Regístrate y comparte el enlace de tu video. Tu obra aparecerá en la muestra tras la revisión.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">7 de noviembre de 2026</div>
+                    <div class="timeline-content">
+                        <h4>Cierre de postulaciones</h4>
+                        <p>Último día para inscribir obras, hasta las 11:59 p. m. (Hora de Colombia, GMT-5).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">21 de noviembre de 2026</div>
+                    <div class="timeline-content">
+                        <h4>Gala de premiación</h4>
+                        <p>Proyección de las obras seleccionadas y entrega de reconocimientos por categoría.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #162032;">
+        <div class="container">
+            <h2 class="section-title">Dos Categorías</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Categoría 01: Reels</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Formato vertical u horizontal</p>
+                    <p>Piezas ágiles y de formato libre: experimentales, ficción breve, videoarte o narrativa pensada para redes sociales.</p>
+                </div>
+                <div class="card">
+                    <h3>Categoría 02: Documentales Cortos</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">No ficción · Duración máxima 05:00</p>
+                    <p>Historias reales contadas desde la mirada investigativa y rigurosa de los semilleros de investigación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Cómo Participar</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>1. Regístrate</h3>
+                    <p>Completa el formulario con tus datos, el nombre de tu semillero y tu institución.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Comparte el enlace</h3>
+                    <p>Sube tu video a YouTube, Vimeo o Google Drive (configurado como público o no listado) y pega el enlace en el formulario. Duración máxima: 5 minutos.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Publica</h3>
+                    <p>Tu obra será revisada y quedará en la muestra digital, con su sinopsis y créditos.</p>
+                </div>
+                <div class="card">
+                    <h3>4. Difunde</h3>
+                    <p>Invita a tu comunidad académica y redes sociales a conocer tu obra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="inscripcion">
+        <div class="container">
+            <h2 class="section-title">Inscribe tu Obra</h2>
+            <div class="form-container">
+                <p style="text-align: center; margin-bottom: 30px; color: var(--text-secondary);">Tu mirada merece pantalla grande. Completa los datos a continuación.</p>
+                
+                <form name="inscripciones-narterinn" netlify netlify-honeypot="bot-field" hidden>
+                    <input type="hidden" name="form-name" value="inscripciones-narterinn">
+                    <p class="hidden" style="display:none;">
+                        <label>No llenes esto si eres humano: <input name="bot-field"></label>
+                    </p>
+                </form>
+
+                <form name="inscripciones-narterinn" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="inscripciones-narterinn">
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo del responsable</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico de contacto</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="semillero">Nombre del semillero de investigación</label>
+                        <input type="text" id="semillero" name="semillero" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="institucion">Institución educativa</label>
+                        <input type="text" id="institucion" name="institucion" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoría de la obra</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="" disabled selected>Selecciona una categoría</option>
+                            <option value="Reels">Reels (Vertical u Horizontal)</option>
+                            <option value="Documental Corto">Documental Corto (No ficción)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="titulo">Título de la obra</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sinopsis">Sinopsis breve (máximo 150 palabras)</label>
+                        <textarea id="sinopsis" name="sinopsis" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="video-link">Enlace al video (YouTube, Vimeo o Google Drive)</label>
+                        <input type="url" id="video-link" name="video_link" placeholder="https://..." required>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 5px;">Asegúrate de que el enlace tenga permisos de visualización públicos o para cualquiera con el enlace.</p>
+                    </div>
+
+                    <button type="submit">Enviar Postulación</button>
+                    <p class="note">Al enviar, aceptas que tu obra sea mostrada en la muestra digital del Narterinn Fest 2026.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Narterinn Fest 2026 · Encuentro Académico de Producción Audiovisual</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Los semilleros de investigación ruedan, editan y comparten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cuenta regresiva hasta el 7 de noviembre de 2026 a las 23:59:59
+        const targetDate = new Date('November 7, 2026 23:59:59').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item" style="width:100%"><span class="countdown-number">CERRADO</span><span class="countdown-label">Postulaciones finalizadas</span></div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
