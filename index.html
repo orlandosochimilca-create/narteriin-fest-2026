@@ -4,105 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narteriin Fest 2026 | Encuentro Académico de Producción Audiovisual</title>
+    <!-- Tipografías profesionales de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
+            /* Colores Institucionales UNIMINUTO + Toque Cinematográfico */
+            --uniminuto-blue: #003399;
+            --uniminuto-gold: #FFC107;
+            --bg-dark: #0a192f;
+            --bg-card: #112240;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background-color: var(--bg-dark); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+            font-family: 'Inter', sans-serif; 
+        }
+        
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         
-       /* HEADER CON IMAGEN DE FONDO */
+        /* HEADER CON IMAGEN DE FONDO */
         header {
             text-align: center;
-            padding: 100px 20px; /* Más espacio para que se vea la imagen */
-            /* Aquí cargamos tu imagen */
-            background-image: url('locomotora.jpg'); 
-            background-size: cover; /* La imagen cubre todo el espacio */
-            background-position: center; /* Se centra */
-            background-repeat: no-repeat;
-            border-bottom: 1px solid #334155;
+            padding: 120px 20px 80px;
+            background-image: linear-gradient(to bottom, rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.9)), url('locomotora.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efecto Parallax elegante */
+            border-bottom: 3px solid var(--uniminuto-gold);
             position: relative;
         }
 
-        /* Capa oscura suave para que el texto blanco se lea bien sobre el dibujo */
-       header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(15, 23, 42, 0.15);
-            z-index: 1;
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            letter-spacing: -1px;
         }
 
-        /* Aseguramos que el contenido esté encima de la capa oscura */
-        header .container {
-            position: relative;
-            z-index: 2;
+        .subtitle-box {
+            background: rgba(0, 51, 153, 0.85); /* Azul UNIMINUTO semitransparente */
+            padding: 20px 30px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .subtitle-box p {
+            font-size: 1.15rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
         
         /* FRASE DE URGENCIA */
         .urgent-phrase {
             display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 12px 30px;
+            background: var(--uniminuto-gold);
+            color: var(--uniminuto-blue);
+            padding: 14px 35px;
             border-radius: 50px;
             font-size: 1.3rem;
-            font-weight: 700;
-            margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-            animation: pulse 2s infinite;
+            font-weight: 800;
+            margin-top: 25px;
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4);
+            animation: pulse 2.5s infinite;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255, 193, 7, 0.7); }
+            100% { transform: scale(1); box-shadow: 0 4px 20px rgba(255, 193, 7, 0.4); }
         }
 
-        .countdown { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
-        .countdown-item { background: rgba(30, 41, 59, 0.9); padding: 15px; border-radius: 10px; min-width: 80px; border: 1px solid #475569; backdrop-filter: blur(5px); }
-        .countdown-number { font-size: 2rem; font-weight: 700; color: var(--accent); display: block; }
-        .countdown-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; }
+        .countdown { display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap; }
+        .countdown-item { 
+            background: var(--bg-card); 
+            padding: 20px; 
+            border-radius: 12px; 
+            min-width: 90px; 
+            border: 1px solid var(--uniminuto-blue); 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .countdown-number { font-size: 2.2rem; font-weight: 800; color: var(--uniminuto-gold); display: block; font-family: 'Poppins', sans-serif; }
+        .countdown-label { font-size: 0.8rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; }
 
-        .section { padding: 60px 0; }
-        .section-title { font-size: 2rem; text-align: center; margin-bottom: 40px; }
+        .section { padding: 80px 0; }
+        .section-title { font-size: 2.2rem; text-align: center; margin-bottom: 50px; color: #ffffff; position: relative; }
+        .section-title::after {
+            content: ''; display: block; width: 80px; height: 4px; background: var(--uniminuto-gold); margin: 15px auto 0; border-radius: 2px;
+        }
+        
         .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--bg-card); padding: 30px; border-radius: 16px; border: 1px solid #334155; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--accent); }
+        .card { 
+            background: var(--bg-card); 
+            padding: 35px; 
+            border-radius: 16px; 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+            transition: all 0.3s ease; 
+        }
+        .card:hover { transform: translateY(-8px); border-color: var(--uniminuto-gold); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--uniminuto-gold); }
         
         .timeline { max-width: 800px; margin: 0 auto; }
-        .timeline-item { display: flex; gap: 20px; margin-bottom: 30px; align-items: flex-start; }
-        .timeline-date { background: var(--accent); color: white; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; white-space: nowrap; }
-        .timeline-content h4 { font-size: 1.2rem; margin-bottom: 5px; }
+        .timeline-item { display: flex; gap: 25px; margin-bottom: 35px; align-items: flex-start; }
+        .timeline-date { 
+            background: var(--uniminuto-blue); 
+            color: white; 
+            padding: 10px 20px; 
+            border-radius: 8px; 
+            font-weight: 700; 
+            font-size: 0.9rem; 
+            white-space: nowrap; 
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .timeline-content h4 { font-size: 1.3rem; margin-bottom: 8px; color: #ffffff; }
         .timeline-content p { color: var(--text-secondary); }
 
-        .form-container { background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid #334155; max-width: 700px; margin: 0 auto; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--text-secondary); }
-        input, select, textarea { width: 100%; padding: 12px; background: var(--bg-dark); border: 1px solid #475569; border-radius: 8px; color: var(--text-primary); font-size: 1rem; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
-        button { width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: background 0.2s; }
-        button:hover { background: var(--accent-hover); }
-        .note { text-align: center; color: var(--text-secondary); font-size: 0.9rem; margin-top: 20px; }
-        footer { text-align: center; padding: 40px 20px; color: var(--text-secondary); border-top: 1px solid #334155; margin-top: 60px; }
+        .form-container { 
+            background: var(--bg-card); 
+            padding: 50px 40px; 
+            border-radius: 20px; 
+            border: 1px solid var(--uniminuto-blue); 
+            max-width: 700px; 
+            margin: 0 auto; 
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
         
-        @media (max-width: 600px) { h1 { font-size: 2rem; } .countdown { gap: 10px; } .countdown-item { min-width: 70px; padding: 10px; } }
+        .btn-inscripcion {
+            display: inline-block; 
+            background: var(--uniminuto-gold); 
+            color: var(--uniminuto-blue); 
+            padding: 20px 45px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-size: 1.25rem; 
+            font-weight: 800; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+            margin: 20px 0;
+        }
+        .btn-inscripcion:hover { 
+            background: #ffdb4d; 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.5); 
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 50px 20px; 
+            color: var(--text-secondary); 
+            border-top: 1px solid rgba(255,255,255,0.05); 
+            margin-top: 40px; 
+            background: var(--bg-card);
+        }
+        footer p { font-size: 0.95rem; }
+        
+        @media (max-width: 600px) { 
+            header h1 { font-size: 2.2rem; } 
+            .countdown { gap: 10px; } 
+            .countdown-item { min-width: 70px; padding: 15px 10px; } 
+            .countdown-number { font-size: 1.8rem; }
+            .timeline-item { flex-direction: column; gap: 10px; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <p style="color: #ffffff; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,1); font-size: 1.1rem;">Encuentro académico de producción audiovisual</p>
+            <p style="color: var(--uniminuto-gold); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-size: 1rem;">Encuentro Académico de Producción Audiovisual</p>
             <h1>Narteriin Fest 2026</h1>
-            <p style="font-size: 1.15rem; color: #ffffff; max-width: 750px; margin: 0 auto 25px; text-shadow: 2px 2px 6px rgba(0,0,0,1), -1px -1px 4px rgba(0,0,0,0.8); background: rgba(0,0,0,0.35); padding: 15px 20px; border-radius: 10px; backdrop-filter: blur(3px);">Los semilleros de investigación ruedan, editan y comparten. Inscribe tu reel o documental corto y muéstrale tu trabajo a la comunidad.</p>            
-            <!-- FRASE DE URGENCIA -->
+            
+            <div class="subtitle-box">
+                <p>Los semilleros de investigación ruedan, editan y comparten. Inscribe tu reel o documental corto y muéstrale tu trabajo a la comunidad.</p>
+            </div>
+            
+            <br>
             <div class="urgent-phrase">🚂 No te deje el tren, postúlate</div>
 
             <div class="countdown" id="countdown">
@@ -111,7 +204,7 @@
                 <div class="countdown-item"><span class="countdown-number" id="minutes">00</span><span class="countdown-label">Minutos</span></div>
                 <div class="countdown-item"><span class="countdown-number" id="seconds">00</span><span class="countdown-label">Segundos</span></div>
             </div>
-            <p style="text-align: center; color: var(--text-secondary); text-shadow: 0 2px 10px rgba(0,0,0,0.8);">Para el cierre de postulaciones</p>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">Para el cierre de postulaciones</p>
         </div>
     </header>
 
@@ -125,7 +218,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">7 de noviembre de 2026</div>
-                    <div class="timeline-content"><h4>Cierre de postulaciones</h4><p>Último día hasta las 11:59 p. m. (GMT-5).</p></div>
+                    <div class="timeline-content"><h4>Cierre de postulaciones</h4><p>Último día hasta las 11:59 p. m. (Hora Colombia, GMT-5).</p></div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-date">21 de noviembre de 2026</div>
@@ -135,19 +228,19 @@
         </div>
     </section>
 
-    <section class="section" style="background: #162032;">
+    <section class="section" style="background: #0d1f3c;">
         <div class="container">
             <h2 class="section-title">Dos Categorías</h2>
             <div class="grid-2">
                 <div class="card">
                     <h3>Categoría 01: Reels</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">Formato vertical u horizontal</p>
-                    <p>Piezas ágiles: experimentales, ficción breve, videoarte o narrativa para redes.</p>
+                    <p style="color: var(--uniminuto-gold); margin-bottom: 15px; font-weight: 600;">Formato vertical u horizontal</p>
+                    <p style="color: var(--text-secondary);">Piezas ágiles: experimentales, ficción breve, videoarte o narrativa pensada para redes sociales.</p>
                 </div>
                 <div class="card">
                     <h3>Categoría 02: Documentales Cortos</h3>
-                    <p style="color: var(--text-secondary); margin-bottom: 15px;">No ficción · Máx. 05:00</p>
-                    <p>Historias reales desde la mirada investigativa de los semilleros.</p>
+                    <p style="color: var(--uniminuto-gold); margin-bottom: 15px; font-weight: 600;">No ficción · Duración máx. 05:00</p>
+                    <p style="color: var(--text-secondary);">Historias reales contadas desde la mirada investigativa y rigurosa de los semilleros.</p>
                 </div>
             </div>
         </div>
@@ -157,24 +250,25 @@
         <div class="container">
             <h2 class="section-title">Cómo Participar</h2>
             <div class="grid-2">
-                <div class="card"><h3>1. Regístrate</h3><p>Completa el formulario con tus datos y semillero.</p></div>
-                <div class="card"><h3>2. Comparte el enlace</h3><p>Sube tu video a YouTube/Vimeo/Drive y pega el link. Máx. 5 min.</p></div>
-                <div class="card"><h3>3. Publica</h3><p>Tu obra será revisada y quedará en la muestra digital.</p></div>
-                <div class="card"><h3>4. Difunde</h3><p>Invita a tu comunidad a conocer tu obra.</p></div>
+                <div class="card"><h3>1. Regístrate</h3><p style="color: var(--text-secondary);">Completa el formulario con tus datos, semillero o grupo de proyección.</p></div>
+                <div class="card"><h3>2. Comparte el enlace</h3><p style="color: var(--text-secondary);">Sube tu video a YouTube, Vimeo o Drive (con acceso público) y pega el link. Máx. 5 min.</p></div>
+                <div class="card"><h3>3. Publica</h3><p style="color: var(--text-secondary);">Tu obra será revisada y quedará en la muestra digital del festival.</p></div>
+                <div class="card"><h3>4. Difunde</h3><p style="color: var(--text-secondary);">Invita a tu comunidad académica a conocer tu obra.</p></div>
             </div>
         </div>
     </section>
 
-   <section class="section" id="inscripcion">
+    <section class="section" id="inscripcion">
         <div class="container">
             <h2 class="section-title">Inscribe tu Obra</h2>
-            <div class="form-container" style="text-align: center; padding: 50px 30px;">
-                <p style="margin-bottom: 30px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;">
+            <div class="form-container">
+                <p style="margin-bottom: 25px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;">
                     Tu mirada merece pantalla grande. <br>
-                    La inscripción es exclusiva para los semilleros y grupos de proyección social de la institución.
+                    <strong style="color: #ffffff;">La inscripción es exclusiva para los semilleros y grupos de proyección social de la institución.</strong>
                 </p>
                 
-               <a href="https://forms.office.com/r/AbCdEfGhIj" target="_blank" style="...">
+                <!-- ¡ENLACE REAL DE MICROSOFT FORMS INSERTADO AQUÍ! -->
+                <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=64W6sVOiZ0Se6NT47U3zAD_fAPFO1iVPliLHqh1KoTFUQ0JZMVBSWVBSTFdCTlFXN09VVEdZVjYxUi4u" target="_blank" class="btn-inscripcion">
                     📝 Ir al Formulario de Inscripción
                 </a>
                 
@@ -187,7 +281,9 @@
 
     <footer>
         <div class="container">
-            <p>Narteriin Fest 2026 · Encuentro Académico de Producción Audiovisual</p>
+            <p style="font-weight: 600; color: #ffffff; margin-bottom: 10px;">Narteriin Fest 2026</p>
+            <p>Encuentro Académico de Producción Audiovisual</p>
+            <p style="margin-top: 15px; font-size: 0.85rem; opacity: 0.7;">Corporación Universitaria Minuto de Dios - UNIMINUTO</p>
         </div>
     </footer>
 
@@ -196,13 +292,17 @@
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            if (distance < 0) { document.getElementById('countdown').innerHTML = '<div class="countdown-item" style="width:100%"><span class="countdown-number">CERRADO</span></div>'; return; }
+            if (distance < 0) { 
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item" style="width:100%"><span class="countdown-number">CERRADO</span><span class="countdown-label">Postulaciones finalizadas</span></div>'; 
+                return; 
+            }
             document.getElementById('days').innerText = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
             document.getElementById('hours').innerText = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
             document.getElementById('minutes').innerText = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
             document.getElementById('seconds').innerText = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
         }
-        setInterval(updateCountdown, 1000); updateCountdown();
+        setInterval(updateCountdown, 1000); 
+        updateCountdown();
     </script>
 </body>
 </html>
