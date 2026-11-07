@@ -7,71 +7,81 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0b1325;
-            color: #ffffff;
-            min-height: 100vh;
+            padding: 0;
+            background: #0b1325;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
-            text-align: center;
+            padding: 20px;
         }
         h1 {
+            text-align: center;
             color: #d4af37;
-            font-size: 2.2rem;
             margin-bottom: 10px;
         }
-        p.subtitle {
-            font-size: 1.1rem;
-            color: #e0e0e0;
-            margin-bottom: 50px;
+        .subtitle {
+            text-align: center;
+            color: #ccc;
+            margin-bottom: 40px;
         }
         .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
         }
         .video-card {
-            background: rgba(255, 255, 255, 0.05);
             border: 1px solid #d4af37;
-            border-radius: 15px;
+            border-radius: 12px;
+            background: #111827;
+            width: 100%;
+            max-width: 500px;
             overflow: hidden;
-            text-align: left;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
         }
         .video-thumbnail {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background: #000;
+        }
+        .video-thumbnail img {
             width: 100%;
-            height: 200px;
-            background-color: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            border-bottom: 2px solid #d4af37;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.95);
+        }
+        .video-thumbnail .overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%);
         }
         .video-info {
             padding: 20px;
         }
         .categoria {
-            display: inline-block;
             background: #d4af37;
             color: #0b1325;
-            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
             font-weight: bold;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            display: inline-block;
         }
         .video-info h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-            color: #ffffff;
+            color: #fff;
+            margin: 15px 0 5px 0;
+            font-size: 1.3rem;
         }
         .video-info p {
-            margin: 0 0 20px 0;
-            font-size: 0.9rem;
-            color: #cccccc;
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
         }
         .card-actions {
             display: flex;
@@ -79,31 +89,33 @@
         }
         .btn {
             flex: 1;
-            padding: 10px;
             text-align: center;
+            padding: 10px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
-            border-radius: 8px;
+            transition: all 0.3s ease;
         }
         .btn-ver {
-            background-color: #d4af37;
+            background: #d4af37;
             color: #0b1325;
         }
         .btn-votar {
-            background-color: transparent;
+            background: transparent;
             color: #d4af37;
             border: 1px solid #d4af37;
         }
         .btn-volver {
-            display: inline-block;
-            margin-top: 50px;
+            display: block;
+            text-align: center;
+            margin: 40px auto;
+            padding: 12px 30px;
+            border: 1px solid #d4af37;
             color: #d4af37;
             text-decoration: none;
-            font-weight: bold;
-            border: 1px solid #d4af37;
-            padding: 10px 25px;
             border-radius: 25px;
+            font-weight: bold;
+            max-width: 200px;
         }
     </style>
 </head>
@@ -111,89 +123,79 @@
     <div class="container">
         <h1>Obras Finalistas NARTERIIN FEST 2026</h1>
         <p class="subtitle">Explora las narrativas territoriales de nuestros semilleros.</p>
-       <!-- Contenedor de las obras finalistas -->
-<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; padding: 20px; max-width: 1100px; margin: 0 auto;">
 
- <!-- OBRA 1: Agenda Territorial -->
-<div style="border: 1px solid #d4af37; border-radius: 12px; background: #111827; width: 100%; max-width: 500px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    
-    <!-- MINIATURA CONTENIDA (250px de alto) -->
-    <div style="position: relative; height: 250px; overflow: hidden; background: #000;">
-        <img src="./miniatura-agenda-territorial.jpg" 
-             alt="Agenda Territorial: Corredor Universitario Girardot - Tena" 
-             style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95);">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%);"></div>
-    </div>
-    
-    <!-- INFORMACIÓN DE LA OBRA -->
-    <div style="padding: 20px;">
-        <span style="background: #d4af37; color: #0b1325; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Documental Corto</span>
-        <h3 style="color: #fff; margin: 15px 0 5px 0; font-size: 1.3rem;">Agenda Territorial: Corredor Universitario Girardot - Tena</h3>
-        <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px; font-style: italic;">
-            <strong>Semilleros:</strong> SISOLUX, Pensamiento Financiero y Económico, ADMONSOS.
-        </p>
-        <div style="display: flex; gap: 10px;">
-            <a href="https://drive.google.com/file/d/1coYL5u6w5wF8czMdh6keAD2VvjfJepGS/view?usp=sharing" target="_blank" style="flex: 1; text-align: center; background: #d4af37; color: #0b1325; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">▶ Ver Video</a>
-            <a href="#" style="flex: 1; text-align: center; background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">🗳️ Votar</a>
+        <div class="video-grid">
+
+            <!-- OBRA 1: Agenda Territorial -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-agenda-territorial.jpg" alt="Agenda Territorial">
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Agenda Territorial: Corredor Universitario Girardot - Tena</h3>
+                    <p><strong>Semilleros:</strong> SISOLUX, Pensamiento Financiero y Económico, ADMONSOS.</p>
+                    <div class="card-actions">
+                        <a href="https://drive.google.com/file/d/1coYL5u6w5wF8czMdh6keAD2VvjfJepGS/view?usp=sharing" target="_blank" class="btn btn-ver">▶ Ver Video</a>
+                        <a href="#" class="btn btn-votar">🗳️ Votar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBRA 2: Campus Virtual Inteligente -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-campus-virtual.jpg" alt="Campus Virtual Inteligente">
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Campus Virtual Inteligente</h3>
+                    <p><strong>Equipo:</strong> UNITIC (Andrés Felipe Corzo, Juan Sebastián Jiménez).</p>
+                    <div class="card-actions">
+                        <a href="https://youtu.be/r2AlHVVLbW8" target="_blank" class="btn btn-ver">▶ Ver Video</a>
+                        <a href="#" class="btn btn-votar">🗳️ Votar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBRA 3: El viaje del Héroe -->
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-viaje-heroe.png" alt="El viaje del Héroe">
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>El viaje del Héroe: una estructura narrativa</h3>
+                    <p><strong>Equipo:</strong> LINDIALEX (Oscar Palma, Alejandro Acosta y equipo).</p>
+                    <div class="card-actions">
+                        <a href="https://uniminuto0-my.sharepoint.com/personal/oscar_palma_uniminuto_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Foscar%5Fpalma%5Funiminuto%5Fedu%2FDocuments%2FUNA%20NUEVA%20ESTRUCTURA%20NARRATIVA%2Emp4" target="_blank" class="btn btn-ver">▶ Ver Video</a>
+                        <a href="#" class="btn btn-votar">🗳️ Votar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OBRA 4: Pequeños Ciudadanos (pendiente de imagen) -->
+            <div class="video-card">
+                <div class="video-thumbnail" style="display: flex; align-items: center; justify-content: center; color: #888; font-size: 1.2rem;">
+                    🎬 Pequeños Ciudadanos
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>PSF Pequeños Ciudadanos Responsables</h3>
+                    <p><strong>Equipo:</strong> Pequeños Ciudadanos (Christian Piragauta, Michael Charry).</p>
+                    <div class="card-actions">
+                        <a href="https://youtu.be/IKD17U9K-Tw" target="_blank" class="btn btn-ver">▶ Ver Video</a>
+                        <a href="#" class="btn btn-votar">🗳️ Votar</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <a href="index.html" class="btn-volver">Volver al Inicio</a>
     </div>
-</div>
-
-  <!-- OBRA 2 -->
-  <div style="border: 1px solid #d4af37; border-radius: 12px; background: #111827; width: 100%; max-width: 500px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    <div style="position: relative; height: 250px; overflow: hidden; background: #000;">
-    <img src="./miniatura-campus-virtual.jpg" 
-         alt="Campus Virtual Inteligente" 
-         style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9);">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.5) 100%);"></div>
-</div>
-    <div style="padding: 20px;">
-      <span style="background: #d4af37; color: #0b1325; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Documental Corto</span>
-      <h3 style="color: #fff; margin: 15px 0 5px 0; font-size: 1.3rem;">Campus Virtual Inteligente</h3>
-      <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px; font-style: italic;">
-        <strong>Equipo:</strong> UNITIC (Andrés Felipe Corzo, Juan Sebastián Jiménez).
-      </p>
-      <div style="display: flex; gap: 10px;">
-        <a href="https://youtu.be/r2AlHVVLbW8" target="_blank" style="flex: 1; text-align: center; background: #d4af37; color: #0b1325; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">▶ Ver Video</a>
-        <a href="#" style="flex: 1; text-align: center; background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">🗳️ Votar</a>
-      </div>
-    </div>
-  </div>
- </div> <!-- Cierre de la tarjeta Campus Virtual -->
-</div> <!-- ¡AQUÍ SE CIERRA EL CONTENEDOR DE LAS OBRAS! -->
-
-<!-- Botón Volver al Inicio (Ahora sí quedará centrado y abajo) -->
-<div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
-    <a href="index.html" 
-       style="display: inline-block; padding: 12px 30px; border: 1px solid #d4af37; color: #d4af37; text-decoration: none; border-radius: 25px; font-weight: bold; transition: all 0.3s ease;">
-        Volver al Inicio
-    </a>
-</div>
-
 </body>
 </html>
-
-<!-- OBRA 3: El viaje del Héroe -->
-<div style="border: 1px solid #d4af37; border-radius: 12px; background: #111827; width: 100%; max-width: 500px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-    
-    <!-- MINIATURA CONTENIDA (250px de alto) -->
-    <div style="position: relative; height: 250px; overflow: hidden; background: #000;">
-        <img src="./miniatura-viaje-heroe.png" 
-             alt="El viaje del Héroe: una estructura narrativa" 
-             style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.95);">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,0.4) 100%);"></div>
-    </div>
-    
-    <!-- INFORMACIÓN DE LA OBRA -->
-    <div style="padding: 20px;">
-        <span style="background: #d4af37; color: #0b1325; padding: 4px 12px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Reels</span>
-        <h3 style="color: #fff; margin: 15px 0 5px 0; font-size: 1.3rem;">El viaje del Héroe: una estructura narrativa</h3>
-        <p style="color: #ccc; font-size: 0.95rem; margin-bottom: 20px; font-style: italic;">
-            <strong>Equipo:</strong> LINDIALEX (Oscar Palma, Alejandro Acosta y equipo).
-        </p>
-        <div style="display: flex; gap: 10px;">
-            <a href="https://uniminuto0-my.sharepoint.com/personal/oscar_palma_uniminuto_edu/_layouts/15/stream.aspx?sw=bypass&bypassReason=abandoned&id=%2Fpersonal%2Foscar%5Fpalma%5Funiminuto%5Fedu%2FDocuments%2FUNA%20NUEVA%20ESTRUCTURA%20NARRATIVA%2Emp4" target="_blank" style="flex: 1; text-align: center; background: #d4af37; color: #0b1325; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">▶ Ver Video</a>
-            <a href="#" style="flex: 1; text-align: center; background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold;">🗳️ Votar</a>
-        </div>
-    </div>
-</div>
