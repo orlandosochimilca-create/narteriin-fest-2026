@@ -20,7 +20,6 @@
         .video-thumbnail { position:relative; height:220px; overflow:hidden; background:#000; }
         .video-thumbnail img { width:100%; height:100%; object-fit:cover; filter:brightness(.95); }
         .video-thumbnail .overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,.4) 100%); }
-        .video-thumbnail .placeholder { display:flex; align-items:center; justify-content:center; height:100%; color:#888; font-size:1.1rem; text-align:center; padding:20px; }
         .video-info { padding:18px; }
         .categoria { background:#d4af37; color:#0b1325; padding:4px 12px; border-radius:15px; font-size:.75rem; font-weight:bold; display:inline-block; margin-bottom:10px; }
         .video-info h3 { color:#fff; margin:0 0 8px 0; font-size:1.15rem; line-height:1.3; }
@@ -47,7 +46,7 @@
         </div>
         <div class="contador" id="contador">Mostrando 14 obras</div>
 
-        <div class="video-grid" id="videoGrid">
+        <div class="video-grid">
 
             <!-- OBRA 1 -->
             <div class="video-card" data-categoria="documental">
@@ -84,7 +83,7 @@
 
             <!-- OBRA 4 -->
             <div class="video-card" data-categoria="documental">
-                <div class="video-thumbnail"><img src="./miniatura-pequenos_ciudadanos_responsables.jpg" alt="Pequeños Ciudadanos"><div class="overlay"></div></div>
+                <div class="video-thumbnail"><img src="./miniatura-pequenos-ciudadanos.jpg" alt="Pequeños Ciudadanos"><div class="overlay"></div></div>
                 <div class="video-info">
                     <span class="categoria">Documental Corto</span>
                     <h3>PSF Pequeños Ciudadanos Responsables</h3>
@@ -104,9 +103,9 @@
                 </div>
             </div>
 
-            <!-- OBRA 6 (imagen pendiente de subir) -->
+            <!-- OBRA 6 -->
             <div class="video-card" data-categoria="reel">
-                <div class="video-thumbnail"><img src="./miniatura-asistente-academico.jpg" alt="Asistente Académico" onerror="this.parentNode.innerHTML='<div class=placeholder>Asistente Académico<br><small>UNITIC</small></div>'"><div class="overlay"></div></div>
+                <div class="video-thumbnail"><img src="./miniatura-asistente-academico.jpg" alt="Asistente Académico"><div class="overlay"></div></div>
                 <div class="video-info">
                     <span class="categoria">Reels</span>
                     <h3>Asistente Académico</h3>
@@ -117,7 +116,7 @@
 
             <!-- OBRA 7 -->
             <div class="video-card" data-categoria="reel">
-                <div class="video-thumbnail"><img src="./miniatura-coop_ingenieria-industrial.jpg" alt="Cooperatividad"><div class="overlay"></div></div>
+                <div class="video-thumbnail"><img src="./miniatura-coop-ingenieria-industrial.jpg" alt="Cooperatividad"><div class="overlay"></div></div>
                 <div class="video-info">
                     <span class="categoria">Reels</span>
                     <h3>Cooperatividad tecnológica en la ingeniería industrial</h3>
@@ -172,7 +171,7 @@
 
             <!-- OBRA 12 -->
             <div class="video-card" data-categoria="reel">
-                <div class="video-thumbnail"><img src="./miniatura-Agua-para-campo-%20alegre.jpg" alt="Agua Campo Alegre"><div class="overlay"></div></div>
+                <div class="video-thumbnail"><img src="./miniatura-agua-campo-alegre.jpg" alt="Agua Campo Alegre"><div class="overlay"></div></div>
                 <div class="video-info">
                     <span class="categoria">Reels</span>
                     <h3>Agua para Campo Alegre: propuesta de potabilización rural</h3>
