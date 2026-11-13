@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NARTERIIN FEST 2026 - Centro Universitario Girardot</title>
     <style>
+        /* ESTILOS GENERALES Y FONDO */
         * { box-sizing: border-box; }
-        body { margin:0; padding:0; background:#0b1325; color:#fff; font-family:'Segoe UI', Tahoma, Verdana, sans-serif; line-height:1.6; }
+        body { 
+            margin:0; padding:0; 
+            background-color: #0b1325; /* Fondo Azul Oscuro Principal */
+            color:#fff; 
+            font-family:'Segoe UI', Tahoma, Verdana, sans-serif; 
+            line-height:1.6; 
+        }
         .container { max-width:1000px; margin:0 auto; padding:40px 20px; text-align:center; }
         
         /* HEADER */
         header { margin-bottom:50px; border-bottom:1px solid #d4af37; padding-bottom:30px; }
-        h1 { color:#d4af37; font-size:2.5rem; margin-bottom:10px; letter-spacing:1px; }
+        h1 { color:#d4af37; font-size:2.5rem; margin-bottom:10px; letter-spacing:1px; text-transform: uppercase; }
         .subtitle { color:#ccc; font-size:1.1rem; max-width:700px; margin:0 auto; }
         
         /* PONENTE MAGISTRAL */
@@ -25,8 +32,9 @@
             font-weight: bold; font-size: 0.8rem; display: inline-block; margin-bottom: 15px;
         }
         .ponente-img { 
-            width: 150px; height: 150px; object-fit: cover; border-radius: 50%; 
-            border: 3px solid #d4af37; margin-bottom: 20px; background: #000;
+            width: 180px; height: 180px; object-fit: cover; border-radius: 50%; 
+            border: 4px solid #d4af37; margin-bottom: 20px; background: #111;
+            box-shadow: 0 0 20px rgba(212,175,55,0.2);
         }
         .ponente-name { color: #fff; font-size: 1.8rem; margin: 0 0 5px 0; }
         .ponente-role { color: #d4af37; font-size: 1rem; font-weight: bold; margin-bottom: 15px; }
@@ -49,7 +57,7 @@
         /* CRONOGRAMA */
         .crono-section { 
             background: rgba(255,255,255,0.03); border-radius: 12px; padding: 30px; 
-            margin-bottom: 50px; text-align: left;
+            margin-bottom: 50px; text-align: left; border: 1px solid #333;
         }
         .crono-title { color: #d4af37; font-size: 1.3rem; margin-top: 0; margin-bottom: 20px; }
         .crono-list { list-style: none; padding: 0; margin: 0; }
@@ -71,18 +79,9 @@
             padding: 25px; width: 320px; text-align: left; transition: transform 0.3s ease;
         }
         .jurado-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212,175,55,0.1); }
-        .jurado-img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 280px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: #fff;
-    border: 1px solid #333;
-}
+        .jurado-img { 
+            width: 100%; height: 280px; object-fit: cover; object-position: top; 
+            border-radius: 8px; margin-bottom: 15px; background: #000; border: 1px solid #333;
         }
         .jurado-name { color: #fff; font-size: 1.2rem; margin: 0 0 5px 0; }
         .jurado-role { color: #d4af37; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px; display: block; }
@@ -92,7 +91,7 @@
         .docs-section { margin-top: 40px; padding: 20px; border-top: 1px solid #333; }
         .btn-doc { 
             display: inline-block; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; 
-            padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; transition: all 0.3s; margin-bottom: 30px;
+            padding: 10px 25px; border-radius: 25px; font-size: 0.9rem; transition: all 0.3s; margin-bottom: 30px;
         }
         .btn-doc:hover { background: #d4af37; color: #0b1325; }
         
@@ -123,6 +122,7 @@
         <!-- PONENTE MAGISTRAL -->
         <section class="ponente-section">
             <span class="ponente-tag">PONENTE MAGISTRAL</span>
+            <!-- Asegúrate de tener la foto 'maura-carbajo.jpg' en tu repositorio -->
             <img src="./maura-carbajo.jpg" alt="Maura Carbajo" class="ponente-img">
             <h2 class="ponente-name">Maura Carbajo</h2>
             <p class="ponente-role">Experta en Comunicación y Narrativas Territoriales</p>
@@ -164,9 +164,7 @@
             <div class="jurados-grid">
                 <!-- Pablo Pinto -->
                 <div class="jurado-card">
-                    <img src="./pablo-pinto.jpg.png"
-     alt="Pablo Antonio Pinto Ballén"
-     class="jurado-img">
+                    <img src="./pablo-pinto.jpg" alt="Pablo Antonio Pinto Ballén" class="jurado-img">
                     <h3 class="jurado-name">Pablo Antonio Pinto Ballén</h3>
                     <span class="jurado-role">Periodista | Director Noticias Siglo XXI</span>
                     <p class="jurado-bio">Comunicador social con amplia trayectoria en análisis político y económico. Fundador y director de <em>Noticias Siglo XXI</em>. Experto en comunicación estratégica y divulgación científica.</p>
@@ -174,9 +172,7 @@
 
                 <!-- Paola Beltrán -->
                 <div class="jurado-card">
-                    <img src="./paola-beltran.jpg.png"
-     alt="Paola Beltrán Díaz"
-     class="jurado-img">
+                    <img src="./paola-beltran.jpg" alt="Paola Beltrán Díaz" class="jurado-img">
                     <h3 class="jurado-name">Paola Beltrán Díaz</h3>
                     <span class="jurado-role">Comunicadora Social | Periodista Independiente</span>
                     <p class="jurado-bio">Egresada de la Universidad Autónoma del Caribe. 20 años de periodismo social en Girardot, exreportera de DW Televisión (16 años). Columnista de Wam Noticias y miembro de ASOCOMEDIOS.</p>
