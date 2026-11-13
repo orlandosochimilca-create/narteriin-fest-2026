@@ -13,7 +13,6 @@ html, body {
   min-height: 100vh;
 }
 body {
-  /* FONDO CON LOCOMOTORA */
   background-color: #0b1325 !important;
   background-image: url('./locomotora.jpg');
   background-size: cover;
@@ -21,7 +20,6 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
-/* Capa oscura sobre la locomotora para que el texto se lea bien */
 body::before {
   content: '';
   position: fixed;
@@ -30,11 +28,7 @@ body::before {
   z-index: -1;
 }
 * { box-sizing: border-box; }
-.wrap {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
+.wrap { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
 h1 {
   color: #d4af37;
   text-align: center;
@@ -51,11 +45,7 @@ h1 {
   line-height: 1.5;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
-.linea {
-  border: 0;
-  border-top: 2px solid #d4af37;
-  margin: 20px 0 40px 0;
-}
+.linea { border: 0; border-top: 2px solid #d4af37; margin: 20px 0 40px 0; }
 
 /* PONENTE */
 .ponente {
@@ -95,13 +85,7 @@ h1 {
   background: #d4af37;
   margin: 10px auto 0;
 }
-.cats {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
+.cats { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
 .cat {
   background: rgba(17, 24, 39, 0.85);
   border: 2px solid #d4af37;
@@ -114,7 +98,7 @@ h1 {
 .cat h3 { color: #ffffff; font-size: 1.1rem; margin: 0 0 10px 0; }
 .cat p { color: #cccccc; font-size: 0.85rem; margin: 0; }
 
-/* CRONOGRAMA + LUGAR */
+/* CRONOGRAMA */
 .crono {
   background: rgba(11, 19, 37, 0.85);
   border: 2px solid #d4af37;
@@ -122,11 +106,7 @@ h1 {
   padding: 25px;
   margin-bottom: 40px;
 }
-.crono h3 {
-  color: #d4af37;
-  margin: 0 0 15px 0;
-  font-size: 1.2rem;
-}
+.crono h3 { color: #d4af37; margin: 0 0 15px 0; font-size: 1.2rem; }
 .crono ul { list-style: none; padding: 0; margin: 0; }
 .crono li {
   padding: 10px 0;
@@ -135,13 +115,9 @@ h1 {
   font-size: 0.95rem;
 }
 .crono li:last-child { border-bottom: none; }
-.crono .fecha {
-  color: #d4af37;
-  font-weight: bold;
-  margin-right: 10px;
-}
+.crono .fecha { color: #d4af37; font-weight: bold; margin-right: 10px; }
 
-/* LUGAR Y HORA DESTACADOS */
+/* LUGAR Y HORA */
 .lugar-hora {
   background: rgba(212, 175, 55, 0.15);
   border: 2px solid #d4af37;
@@ -150,45 +126,14 @@ h1 {
   margin-bottom: 40px;
   text-align: center;
 }
-.lugar-hora h3 {
-  color: #d4af37;
-  margin: 0 0 15px 0;
-  font-size: 1.2rem;
-}
-.lugar-hora .dato {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  color: #ffffff;
-  font-size: 1rem;
-}
-.lugar-hora .dato div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.lugar-hora .etiqueta {
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 5px;
-}
-.lugar-hora .valor {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
+.lugar-hora h3 { color: #d4af37; margin: 0 0 15px 0; font-size: 1.2rem; }
+.lugar-hora .dato { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; color: #ffffff; font-size: 1rem; }
+.lugar-hora .dato div { display: flex; flex-direction: column; align-items: center; }
+.lugar-hora .etiqueta { color: #d4af37; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.lugar-hora .valor { font-size: 1.1rem; font-weight: bold; }
 
 /* JURADOS */
-.jurados {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
+.jurados { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-bottom: 40px; }
 .jurado {
   background: rgba(17, 24, 39, 0.85);
   border: 2px solid #d4af37;
@@ -207,30 +152,12 @@ h1 {
   background: #000;
   border: 1px solid #d4af37;
 }
-.jurado h3 {
-  color: #ffffff;
-  font-size: 1.1rem;
-  margin: 0 0 5px 0;
-}
-.jurado .cargo-j {
-  color: #d4af37;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  display: block;
-}
-.jurado p {
-  color: #cccccc;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  margin: 0;
-}
+.jurado h3 { color: #ffffff; font-size: 1.1rem; margin: 0 0 5px 0; }
+.jurado .cargo-j { color: #d4af37; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; display: block; }
+.jurado p { color: #cccccc; font-size: 0.85rem; line-height: 1.5; margin: 0; }
 
 /* DOCS Y EXPECTATIVA */
-.docs {
-  text-align: center;
-  margin: 40px 0 20px 0;
-}
+.docs { text-align: center; margin: 40px 0 20px 0; }
 .btn-doc {
   display: inline-block;
   color: #d4af37;
@@ -242,10 +169,7 @@ h1 {
   font-size: 0.9rem;
   background: rgba(11, 19, 37, 0.7);
 }
-.btn-doc:hover {
-  background: #d4af37;
-  color: #0b1325;
-}
+.btn-doc:hover { background: #d4af37; color: #0b1325; }
 .expectativa {
   background: rgba(212,175,55,0.1);
   border-left: 4px solid #d4af37;
@@ -254,26 +178,10 @@ h1 {
   text-align: left;
   margin-top: 20px;
 }
-.expectativa h4 {
-  color: #d4af37;
-  margin: 0 0 10px 0;
-  font-size: 1rem;
-}
-.expectativa p {
-  color: #dddddd;
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.6;
-}
+.expectativa h4 { color: #d4af37; margin: 0 0 10px 0; font-size: 1rem; }
+.expectativa p { color: #dddddd; font-size: 0.9rem; margin: 0; line-height: 1.6; }
 
-footer {
-  text-align: center;
-  color: #aaaaaa;
-  font-size: 0.8rem;
-  margin-top: 50px;
-  padding-top: 20px;
-  border-top: 2px solid #d4af37;
-}
+footer { text-align: center; color: #aaaaaa; font-size: 0.8rem; margin-top: 50px; padding-top: 20px; border-top: 2px solid #d4af37; }
 </style>
 </head>
 <body>
@@ -284,17 +192,17 @@ footer {
   <p class="sub">Encuentro de Narrativas Territoriales de Investigación e Innovación<br>Centro Universitario Girardot – UNIMINUTO</p>
   <hr class="linea">
 
-  <!-- PONENTE MAGISTRAL (TARJETA IGUAL A LA DE LOS JURADOS) -->
+  <!-- PONENTE MAGISTRAL (PERFIL REAL) -->
   <div class="ponente">
     <span class="tag">PONENTE MAGISTRAL - INVITADA INTERNACIONAL</span>
-    
+
     <div style="background: rgba(17, 24, 39, 0.85); border: 2px solid #d4af37; border-radius: 12px; padding: 20px; width: 320px; margin: 0 auto 20px auto; text-align: center;">
         <img src="./maura-carbajo.jpg" alt="Maura Carbajo" style="width: 100%; height: 260px; object-fit: cover; object-position: top center; border-radius: 8px; margin-bottom: 15px; background: #000; border: 1px solid #d4af37;">
         <h2 style="color: #ffffff; font-size: 1.3rem; margin: 0 0 5px 0;">Maura Carbajo</h2>
-        <div style="color: #d4af37; font-size: 0.85rem; font-weight: bold;">Experta en Comunicación y Narrativas Territoriales</div>
+        <div style="color: #d4af37; font-size: 0.85rem; font-weight: bold;">Arquitecta | Especialista en Ciencias de la Construcción · Maestra en Valuación</div>
     </div>
 
-    <p style="color: #dddddd; max-width: 650px; margin: 0 auto; line-height: 1.6;">Reconocida investigadora y comunicadora social con amplia trayectoria en proyectos de apropiación social del conocimiento. Su ponencia magistral abordará el papel de las narrativas audiovisuales en la visibilización de la investigación universitaria y su impacto en el desarrollo territorial.</p>
+    <p style="color: #dddddd; max-width: 650px; margin: 0 auto; line-height: 1.6;">Licenciada en Arquitectura, con especialidad en Ciencias de la Construcción y Maestría en Valuación. Cuenta con experiencia en construcción, diseño arquitectónico, gestoría en trámites y administración de la construcción desde el año 2002. Ha desarrollado labor en docencia universitaria y participación académica, con experiencia en el desarrollo de programas académicos, mejora de metodologías para el diseño, talleres participativos y procesos de conceptualización.</p>
   </div>
 
   <!-- CATEGORÍAS -->
