@@ -1,205 +1,402 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NARTERIIN FEST 2026 - Centro Universitario Girardot</title>
-    <style>
-        /* RESET Y BASE */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        /* FONDO Y CUERPO PRINCIPAL */
-        body.nf-main { 
-            background-color: #0b1325 !important; /* Azul Oscuro Forzado */
-            color: #ffffff; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            line-height: 1.6;
-            min-height: 100vh;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NARTERIIN FEST 2026</title>
+<style>
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #ffffff !important;
+  font-family: 'Segoe UI', Arial, sans-serif !important;
+  min-height: 100vh;
+}
+body {
+  /* FONDO CON LOCOMOTORA */
+  background-color: #0b1325 !important;
+  background-image: url('./locomotora.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+/* Capa oscura sobre la locomotora para que el texto se lea bien */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(11, 19, 37, 0.85);
+  z-index: -1;
+}
+* { box-sizing: border-box; }
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+h1 {
+  color: #d4af37;
+  text-align: center;
+  font-size: 2.4rem;
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+.sub {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+.linea {
+  border: 0;
+  border-top: 2px solid #d4af37;
+  margin: 20px 0 40px 0;
+}
 
-        .nf-wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+/* PONENTE */
+.ponente {
+  border: 2px solid #d4af37;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(11, 19, 37, 0.75);
+  margin-bottom: 40px;
+}
+.tag {
+  display: inline-block;
+  background: #d4af37;
+  color: #0b1325;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.foto-maura {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #d4af37;
+  object-fit: cover;
+  margin-bottom: 20px;
+  background: #111;
+}
+.ponente h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0 0 10px 0;
+}
+.ponente .cargo {
+  color: #d4af37;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.ponente p {
+  color: #dddddd;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
-        /* HEADER */
-        .nf-header { margin-bottom: 40px; border-bottom: 1px solid #d4af37; padding-bottom: 20px; }
-        .nf-title { color: #d4af37; font-size: 2.2rem; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 800; }
-        .nf-subtitle { color: #cccccc; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+/* CATEGORÍAS */
+.titulo-seccion {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 40px 0 25px 0;
+  position: relative;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+.titulo-seccion::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #d4af37;
+  margin: 10px auto 0;
+}
+.cats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.cat {
+  background: rgba(17, 24, 39, 0.85);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+}
+.cat-icon { font-size: 2rem; margin-bottom: 10px; }
+.cat h3 { color: #ffffff; font-size: 1.1rem; margin: 0 0 10px 0; }
+.cat p { color: #cccccc; font-size: 0.85rem; margin: 0; }
 
-        /* SECCIÓN PONENTE MAGISTRAL */
-        .nf-ponente-box { 
-            background: rgba(17, 24, 39, 0.6);
-            border: 1px solid #d4af37;
-            border-radius: 16px; 
-            padding: 40px 20px; 
-            margin-bottom: 50px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-        }
-        .nf-tag { 
-            background: #d4af37; color: #0b1325; padding: 5px 15px; border-radius: 20px; 
-            font-weight: bold; font-size: 0.75rem; display: inline-block; margin-bottom: 20px;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .nf-img-circle { 
-            width: 160px; height: 160px; object-fit: cover; border-radius: 50%; 
-            border: 4px solid #d4af37; margin-bottom: 20px; background: #111;
-            box-shadow: 0 0 25px rgba(212,175,55,0.25);
-        }
-        .nf-name { color: #ffffff; font-size: 1.8rem; margin: 0 0 5px 0; font-weight: bold; }
-        .nf-role { color: #d4af37; font-size: 1rem; font-weight: bold; margin-bottom: 20px; }
-        .nf-bio { color: #bbbbbb; font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+/* CRONOGRAMA + LUGAR */
+.crono {
+  background: rgba(11, 19, 37, 0.85);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+}
+.crono h3 {
+  color: #d4af37;
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+}
+.crono ul { list-style: none; padding: 0; margin: 0; }
+.crono li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+.crono li:last-child { border-bottom: none; }
+.crono .fecha {
+  color: #d4af37;
+  font-weight: bold;
+  margin-right: 10px;
+}
 
-        /* CATEGORÍAS */
-        .nf-cats { margin-bottom: 50px; }
-        .nf-cat-title { color: #ffffff; font-size: 1.5rem; margin-bottom: 25px; position: relative; display: inline-block; font-weight: bold; }
-        .nf-cat-title::after { content:''; display:block; width:50px; height:3px; background:#d4af37; margin:10px auto 0; }
-        .nf-cat-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .nf-cat-card { 
-            background: #111827; border: 1px solid #333333; border-radius: 12px; 
-            padding: 25px; width: 300px; transition: transform 0.3s ease;
-        }
-        .nf-cat-card:hover { transform: translateY(-5px); border-color: #d4af37; }
-        .nf-cat-icon { font-size: 2rem; margin-bottom: 10px; }
-        .nf-cat-name { color: #ffffff; font-size: 1.2rem; margin: 0 0 10px 0; font-weight: bold; }
-        .nf-cat-desc { color: #aaaaaa; font-size: 0.9rem; margin: 0; }
+/* LUGAR Y HORA DESTACADOS */
+.lugar-hora {
+  background: rgba(212, 175, 55, 0.15);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.lugar-hora h3 {
+  color: #d4af37;
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+}
+.lugar-hora .dato {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  color: #ffffff;
+  font-size: 1rem;
+}
+.lugar-hora .dato div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lugar-hora .etiqueta {
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.lugar-hora .valor {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
 
-        /* CRONOGRAMA */
-        .nf-crono { 
-            background: rgba(255,255,255,0.03); border-radius: 12px; padding: 30px; 
-            margin-bottom: 50px; text-align: left; border: 1px solid #333333;
-        }
-        .nf-crono-title { color: #d4af37; font-size: 1.3rem; margin-top: 0; margin-bottom: 20px; font-weight: bold; }
-        .nf-list { list-style: none; padding: 0; margin: 0; }
-        .nf-list li { 
-            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); 
-            color: #cccccc; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;
-        }
-        .nf-list li:last-child { border-bottom: none; }
-        .nf-date { color: #d4af37; font-weight: bold; min-width: 180px; }
+/* JURADOS */
+.jurados {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.jurado {
+  background: rgba(17, 24, 39, 0.85);
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  text-align: left;
+}
+.jurado img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #000;
+  border: 1px solid #d4af37;
+}
+.jurado h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+.jurado .cargo-j {
+  color: #d4af37;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+.jurado p {
+  color: #cccccc;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0;
+}
 
-        /* JURADOS */
-        .nf-jurados { margin-bottom: 50px; }
-        .nf-jur-title { color: #ffffff; font-size: 1.5rem; margin-bottom: 10px; position: relative; display: inline-block; font-weight: bold; }
-        .nf-jur-title::after { content:''; display:block; width:50px; height:3px; background:#d4af37; margin:10px auto 0; }
-        .nf-jur-desc { color: #aaaaaa; margin-bottom: 30px; font-size: 0.9rem; }
-        .nf-jur-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        .nf-jur-card { 
-            background: #111827; border: 1px solid #d4af37; border-radius: 12px; 
-            padding: 25px; width: 320px; text-align: left; transition: transform 0.3s ease;
-        }
-        .nf-jur-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(212,175,55,0.1); }
-        .nf-jur-img { 
-            width: 100%; height: 260px; object-fit: cover; object-position: top; 
-            border-radius: 8px; margin-bottom: 15px; background: #000; border: 1px solid #333;
-        }
-        .nf-jur-name { color: #ffffff; font-size: 1.2rem; margin: 0 0 5px 0; font-weight: bold; }
-        .nf-jur-role { color: #d4af37; font-size: 0.85rem; font-weight: bold; margin-bottom: 10px; display: block; }
-        .nf-jur-bio { color: #bbbbbb; font-size: 0.85rem; line-height: 1.5; margin: 0; }
+/* DOCS Y EXPECTATIVA */
+.docs {
+  text-align: center;
+  margin: 40px 0 20px 0;
+}
+.btn-doc {
+  display: inline-block;
+  color: #d4af37;
+  border: 2px solid #d4af37;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background: rgba(11, 19, 37, 0.7);
+}
+.btn-doc:hover {
+  background: #d4af37;
+  color: #0b1325;
+}
+.expectativa {
+  background: rgba(212,175,55,0.1);
+  border-left: 4px solid #d4af37;
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  text-align: left;
+  margin-top: 20px;
+}
+.expectativa h4 {
+  color: #d4af37;
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+.expectativa p {
+  color: #dddddd;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.6;
+}
 
-        /* DOCUMENTOS Y EXPECTATIVA */
-        .nf-docs { margin-top: 40px; padding: 20px; border-top: 1px solid #333; }
-        .nf-btn-doc { 
-            display: inline-block; color: #d4af37; text-decoration: none; border: 1px solid #d4af37; 
-            padding: 10px 25px; border-radius: 25px; font-size: 0.9rem; transition: all 0.3s; margin-bottom: 30px;
-            font-weight: bold;
-        }
-        .nf-btn-doc:hover { background: #d4af37; color: #0b1325; }
-        
-        .nf-expectativa { 
-            background: linear-gradient(90deg, rgba(212,175,55,0.1) 0%, rgba(11,19,37,0) 100%); 
-            border-left: 4px solid #d4af37; 
-            padding: 25px; 
-            border-radius: 0 12px 12px 0; 
-            text-align: left; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .nf-expectativa h4 { 
-            color: #d4af37; margin: 0 0 10px 0; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; font-weight: bold;
-        }
-        .nf-expectativa p { color: #dddddd; font-size: 0.95rem; margin: 0; line-height: 1.6; }
-
-        /* FOOTER */
-        .nf-footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #333; color: #666666; font-size: 0.8rem; }
-    </style>
+footer {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 0.8rem;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 2px solid #d4af37;
+}
+</style>
 </head>
-<body class="nf-main">
-    <div class="nf-wrapper">
-        <header class="nf-header">
-            <h1 class="nf-title">NARTERIIN FEST 2026</h1>
-            <p class="nf-subtitle">Encuentro de Narrativas Territoriales de Investigación e Innovación<br>Centro Universitario Girardot – UNIMINUTO</p>
-        </header>
+<body>
 
-        <!-- PONENTE MAGISTRAL -->
-        <section class="nf-ponente-box">
-            <span class="nf-tag">Ponente Magistral</span>
-            <img src="./maura-carbajo.jpg" alt="Maura Carbajo" class="nf-img-circle">
-            <h2 class="nf-name">Maura Carbajo</h2>
-            <p class="nf-role">Experta en Comunicación y Narrativas Territoriales</p>
-            <p class="nf-bio">Reconocida investigadora y comunicadora social con amplia trayectoria en proyectos de apropiación social del conocimiento. Su ponencia magistral abordará el papel de las narrativas audiovisuales en la visibilización de la investigación universitaria y su impacto en el desarrollo territorial.</p>
-        </section>
+<div class="wrap">
 
-        <!-- CATEGORÍAS -->
-        <section class="nf-cats">
-            <h2 class="nf-cat-title">Categorías Evaluadas</h2>
-            <div class="nf-cat-grid">
-                <div class="nf-cat-card">
-                    <div class="nf-cat-icon">🎬</div>
-                    <h3 class="nf-cat-name">Micro-Relato Vertical</h3>
-                    <p class="nf-cat-desc">Formato Reel/TikTok/Shorts (45-90 seg). Comunicación rápida y dinámica para redes sociales.</p>
-                </div>
-                <div class="nf-cat-card">
-                    <div class="nf-cat-icon">📽️</div>
-                    <h3 class="nf-cat-name">Mini-Documental Territorial</h3>
-                    <p class="nf-cat-desc">Horizontal o Vertical (3-5 min). Investigación de campo, entrevistas y evidencias reales.</p>
-                </div>
-            </div>
-        </section>
+  <h1>NARTERIIN FEST 2026</h1>
+  <p class="sub">Encuentro de Narrativas Territoriales de Investigación e Innovación<br>Centro Universitario Girardot – UNIMINUTO</p>
+  <hr class="linea">
 
-        <!-- CRONOGRAMA -->
-        <section class="nf-crono">
-            <h3 class="nf-crono-title">📅 Cronograma Oficial</h3>
-            <ul class="nf-list">
-                <li><span class="nf-date">7 de noviembre</span> Cierre de postulaciones ✅</li>
-                <li><span class="nf-date">8 - 20 de noviembre</span> Evaluación de jurados 🔄</li>
-                <li><span class="nf-date">21 de noviembre</span> Gala de Premiación y Proyección 🏆</li>
-            </ul>
-        </section>
+  <!-- PONENTE -->
+  <div class="ponente">
+    <span class="tag">PONENTE MAGISTRAL</span>
+    <br>
+    <img src="./maura-carbajo.jpg" alt="Maura Carbajo" class="foto-maura">
+    <h2>Maura Carbajo</h2>
+    <div class="cargo">Experta en Comunicación y Narrativas Territoriales</div>
+    <p>Reconocida investigadora y comunicadora social con amplia trayectoria en proyectos de apropiación social del conocimiento. Su ponencia magistral abordará el papel de las narrativas audiovisuales en la visibilización de la investigación universitaria y su impacto en el desarrollo territorial.</p>
+  </div>
 
-        <!-- JURADOS -->
-        <section class="nf-jurados">
-            <h2 class="nf-jur-title">Nuestros Jurados</h2>
-            <p class="nf-jur-desc">Expertos nacionales y regionales evaluarán las obras bajo criterios de rigor científico, apropiación territorial y creatividad narrativa.</p>
-            
-            <div class="nf-jur-grid">
-                <!-- Pablo Pinto -->
-                <div class="nf-jur-card">
-                    <img src="./pablo-pinto.jpg" alt="Pablo Antonio Pinto Ballén" class="nf-jur-img">
-                    <h3 class="nf-jur-name">Pablo Antonio Pinto Ballén</h3>
-                    <span class="nf-jur-role">Periodista | Director Noticias Siglo XXI</span>
-                    <p class="nf-jur-bio">Comunicador social con amplia trayectoria en análisis político y económico. Fundador y director de <em>Noticias Siglo XXI</em>. Experto en comunicación estratégica y divulgación científica.</p>
-                </div>
-
-                <!-- Paola Beltrán -->
-                <div class="nf-jur-card">
-                    <img src="./paola-beltran.jpg" alt="Paola Beltrán Díaz" class="nf-jur-img">
-                    <h3 class="nf-jur-name">Paola Beltrán Díaz</h3>
-                    <span class="nf-jur-role">Comunicadora Social | Periodista Independiente</span>
-                    <p class="nf-jur-bio">Egresada de la Universidad Autónoma del Caribe. 20 años de periodismo social en Girardot, exreportera de DW Televisión (16 años). Columnista de Wam Noticias y miembro de ASOCOMEDIOS.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- DOCUMENTOS Y NOTA DE EXPECTATIVA -->
-        <section class="nf-docs">
-            <a href="./terminos-de-referencia.pdf" target="_blank" class="nf-btn-doc">📄 Descargar Términos de Referencia</a>
-            
-            <div class="nf-expectativa">
-                <h4>✨ Nota de Expectativa</h4>
-                <p>¡Estamos preparando algo especial! La galería digital con las <strong>14 obras finalistas</strong> estará disponible muy pronto. Actualmente, el comité organizador se encuentra en la fase de curaduría técnica y validación de contenidos para garantizar una experiencia audiovisual impecable durante la gala del 21 de noviembre. ¡Pronto podrás descubrir las narrativas que están transformando nuestro territorio!</p>
-            </div>
-        </section>
-
-        <footer class="nf-footer">
-            <p>© 2026 Coordinación de Investigación - Centro Universitario Girardot (UNIMINUTO)</p>
-        </footer>
+  <!-- CATEGORÍAS -->
+  <h2 class="titulo-seccion">Categorías Evaluadas</h2>
+  <div class="cats">
+    <div class="cat">
+      <div class="cat-icon">🎬</div>
+      <h3>Micro-Relato Vertical</h3>
+      <p>Formato Reel/TikTok/Shorts (45-90 seg). Comunicación rápida y dinámica para redes sociales.</p>
     </div>
+    <div class="cat">
+      <div class="cat-icon">📽️</div>
+      <h3>Mini-Documental Territorial</h3>
+      <p>Horizontal o Vertical (3-5 min). Investigación de campo, entrevistas y evidencias reales.</p>
+    </div>
+  </div>
+
+  <!-- CRONOGRAMA -->
+  <div class="crono">
+    <h3>📅 Cronograma Oficial</h3>
+    <ul>
+      <li><span class="fecha">7 de noviembre</span> Cierre de postulaciones ✅</li>
+      <li><span class="fecha">8 - 20 de noviembre</span> Evaluación de jurados 🔄</li>
+      <li><span class="fecha">21 de noviembre</span> Gala de Premiación y Proyección 🏆</li>
+    </ul>
+  </div>
+
+  <!-- LUGAR Y HORA -->
+  <div class="lugar-hora">
+    <h3>📍 Sede del Evento</h3>
+    <div class="dato">
+      <div>
+        <span class="etiqueta">Lugar</span>
+        <span class="valor">Auditorio Banco de la República</span>
+      </div>
+      <div>
+        <span class="etiqueta">Hora</span>
+        <span class="valor">8:30 a.m.</span>
+      </div>
+      <div>
+        <span class="etiqueta">Fecha</span>
+        <span class="valor">21 de noviembre de 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- JURADOS -->
+  <h2 class="titulo-seccion">Nuestros Jurados</h2>
+  <p style="text-align:center; color:#cccccc; margin-bottom:25px; font-size:0.9rem;">Expertos nacionales y regionales evaluarán las obras bajo criterios de rigor científico, apropiación territorial y creatividad narrativa.</p>
+  <div class="jurados">
+    <div class="jurado">
+      <img src="./pablo-pinto.jpg" alt="Pablo Antonio Pinto Ballén">
+      <h3>Pablo Antonio Pinto Ballén</h3>
+      <span class="cargo-j">Periodista | Director Noticias Siglo XXI</span>
+      <p>Comunicador social con amplia trayectoria en análisis político y económico. Fundador y director de <em>Noticias Siglo XXI</em>. Experto en comunicación estratégica y divulgación científica.</p>
+    </div>
+    <div class="jurado">
+      <img src="./paola-beltran.jpg" alt="Paola Beltrán Díaz">
+      <h3>Paola Beltrán Díaz</h3>
+      <span class="cargo-j">Comunicadora Social | Periodista Independiente</span>
+      <p>Egresada de la Universidad Autónoma del Caribe. 20 años de periodismo social en Girardot, exreportera de DW Televisión (16 años). Columnista de Wam Noticias y miembro de ASOCOMEDIOS.</p>
+    </div>
+  </div>
+
+  <!-- DOCS Y EXPECTATIVA -->
+  <div class="docs">
+    <a href="./terminos-de-referencia.pdf" target="_blank" class="btn-doc">📄 Descargar Términos de Referencia</a>
+  </div>
+
+  <div class="expectativa">
+    <h4>✨ Nota de Expectativa</h4>
+    <p>¡Estamos preparando algo especial! La galería digital con las <strong>14 obras finalistas</strong> estará disponible muy pronto. Actualmente, el comité organizador se encuentra en la fase de curaduría técnica y validación de contenidos para garantizar una experiencia audiovisual impecable durante la gala del 21 de noviembre. ¡Pronto podrás descubrir las narrativas que están transformando nuestro territorio!</p>
+  </div>
+
+  <footer>
+    © 2026 Coordinación de Investigación - Centro Universitario Girardot (UNIMINUTO)
+  </footer>
+
+</div>
+
 </body>
 </html>
