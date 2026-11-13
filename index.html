@@ -181,7 +181,64 @@ h1 {
 .expectativa h4 { color: #d4af37; margin: 0 0 10px 0; font-size: 1rem; }
 .expectativa p { color: #dddddd; font-size: 0.9rem; margin: 0; line-height: 1.6; }
 
-footer { text-align: center; color: #aaaaaa; font-size: 0.8rem; margin-top: 50px; padding-top: 20px; border-top: 2px solid #d4af37; }
+/* SECCIÓN LOGOS GRUPOS DE INVESTIGACIÓN */
+.grupos-section {
+  margin-top: 60px;
+  padding: 30px 20px;
+  border-top: 2px solid #d4af37;
+  text-align: center;
+}
+.grupos-titulo {
+  color: #d4af37;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  font-weight: bold;
+}
+.grupos-subtitulo {
+  color: #cccccc;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.logo-item {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d4af37;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.logo-item:hover {
+  transform: scale(1.08);
+}
+.logo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+footer {
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 0.8rem;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
 </style>
 </head>
 <body>
@@ -192,7 +249,7 @@ footer { text-align: center; color: #aaaaaa; font-size: 0.8rem; margin-top: 50px
   <p class="sub">Encuentro de Narrativas Territoriales de Investigación e Innovación<br>Centro Universitario Girardot – UNIMINUTO</p>
   <hr class="linea">
 
-  <!-- PONENTE MAGISTRAL (PERFIL REAL) -->
+  <!-- PONENTE MAGISTRAL -->
   <div class="ponente">
     <span class="tag">PONENTE MAGISTRAL - INVITADA INTERNACIONAL</span>
 
@@ -276,6 +333,33 @@ footer { text-align: center; color: #aaaaaa; font-size: 0.8rem; margin-top: 50px
     <h4>✨ Nota de Expectativa</h4>
     <p>¡Estamos preparando algo especial! La galería digital con las <strong>14 obras finalistas</strong> estará disponible muy pronto. Actualmente, el comité organizador se encuentra en la fase de curaduría técnica y validación de contenidos para garantizar una experiencia audiovisual impecable durante la gala del 21 de noviembre. ¡Pronto podrás descubrir las narrativas que están transformando nuestro territorio!</p>
   </div>
+
+  <!-- SECCIÓN LOGOS GRUPOS DE INVESTIGACIÓN -->
+  <section class="grupos-section">
+    <h3 class="grupos-titulo">Invitan</h3>
+    <p class="grupos-subtitulo">Grupos de Investigación del Centro Universitario Girardot</p>
+    
+    <div class="logos-grid">
+      <div class="logo-item">
+        <img src="./logo-md.jpg" alt="Grupo MD - Desarrollo Regional">
+      </div>
+      <div class="logo-item">
+        <img src="./logo-asst.jpg" alt="Politécnico de Investigación ASST">
+      </div>
+      <div class="logo-item">
+        <img src="./logo-accounting.jpg" alt="Accounting & Economy Interdisciplinary Group">
+      </div>
+      <div class="logo-item">
+        <img src="./logo-desarrollo-humano.jpg" alt="Desarrollo Humano Política y Paz">
+      </div>
+      <div class="logo-item">
+        <img src="./logo-conocimiento.jpg" alt="Conocimiento en Contexto">
+      </div>
+      <div class="logo-item">
+        <img src="./logo-griegos.jpg" alt="GRIEGOS - Grupo de Investigación">
+      </div>
+    </div>
+  </section>
 
   <footer>
     © 2026 Coordinación de Investigación - Centro Universitario Girardot (UNIMINUTO)
