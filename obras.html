@@ -1,1 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obras Finalistas - NARTERIIN FEST 2026</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin:0; padding:0; background:#0b1325; color:#fff; font-family:'Segoe UI', Tahoma, Verdana, sans-serif; }
+        .container { max-width:1200px; margin:0 auto; padding:30px 20px; }
+        h1 { text-align:center; color:#d4af37; margin-bottom:10px; font-size:2rem; }
+        .subtitle { text-align:center; color:#ccc; margin-bottom:30px; }
+        .filtros { display:flex; justify-content:center; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+        .filtro-btn { padding:10px 20px; border:1px solid #d4af37; background:transparent; color:#d4af37; border-radius:25px; cursor:pointer; font-weight:bold; font-size:.9rem; transition:all .3s ease; }
+        .filtro-btn:hover, .filtro-btn.activo { background:#d4af37; color:#0b1325; }
+        .contador { text-align:center; color:#888; margin-bottom:20px; font-size:.9rem; }
+        .video-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:25px; padding:10px; }
+        .video-card { border:1px solid #d4af37; border-radius:12px; background:#111827; overflow:hidden; box-shadow:0 4px 6px rgba(0,0,0,.3); transition:transform .3s ease; }
+        .video-card:hover { transform:translateY(-5px); }
+        .video-thumbnail { position:relative; height:220px; overflow:hidden; background:linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+        .video-thumbnail img { width:100%; height:100%; object-fit:cover; filter:brightness(.95); }
+        .video-thumbnail .overlay { position:absolute; top:0; left:0; right:0; bottom:0; background:linear-gradient(to bottom, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(0,0,0,.4) 100%); }
+        .video-thumbnail .placeholder { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#d4af37; font-size:1.2rem; font-weight:bold; text-align:center; padding:20px; }
+        .video-thumbnail .placeholder .icon { font-size:3rem; margin-bottom:10px; }
+        .video-info { padding:18px; }
+        .categoria { background:#d4af37; color:#0b1325; padding:4px 12px; border-radius:15px; font-size:.75rem; font-weight:bold; display:inline-block; margin-bottom:10px; }
+        .video-info h3 { color:#fff; margin:0 0 8px 0; font-size:1.15rem; line-height:1.3; }
+        .video-info p { color:#ccc; font-size:.85rem; margin-bottom:15px; font-style:italic; line-height:1.4; }
+        .card-actions { display:flex; gap:10px; }
+        .btn { flex:1; text-align:center; padding:10px; border-radius:6px; text-decoration:none; font-weight:bold; font-size:.9rem; transition:all .3s ease; }
+        .btn-ver { background:#d4af37; color:#0b1325; }
+        .btn-ver:hover { background:#e5c04a; }
+        .btn-votar { background:transparent; color:#d4af37; border:1px solid #d4af37; }
+        .btn-votar:hover { background:#d4af37; color:#0b1325; }
+        .btn-volver { display:block; text-align:center; margin:40px auto 20px auto; padding:12px 30px; border:1px solid #d4af37; color:#d4af37; text-decoration:none; border-radius:25px; font-weight:bold; max-width:220px; transition:all .3s ease; }
+        .btn-volver:hover { background:#d4af37; color:#0b1325; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Obras Finalistas NARTERIIN FEST 2026</h1>
+        <p class="subtitle">Explora las narrativas territoriales de nuestros semilleros.</p>
 
+        <div class="filtros">
+            <button class="filtro-btn activo" onclick="filtrar('todas', event)">Todas (14)</button>
+            <button class="filtro-btn" onclick="filtrar('documental', event)">Documentales (5)</button>
+            <button class="filtro-btn" onclick="filtrar('reel', event)">Reels (9)</button>
+        </div>
+        <div class="contador" id="contador">Mostrando 14 obras</div>
+
+        <div class="video-grid">
+
+            <!-- OBRA 1 -->
+            <div class="video-card" data-categoria="documental">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-agenda-territorial.jpg" alt="Agenda Territorial" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Agenda Territorial</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Agenda Territorial: Corredor Universitario Girardot - Tena</h3>
+                    <p><strong>Semilleros:</strong> SISOLUX, Pensamiento Financiero y Económico, ADMONSOS</p>
+                    <div class="card-actions"><a href="https://drive.google.com/file/d/1coYL5u6w5wF8czMdh6keAD2VvjfJepGS/view?usp=sharing" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 2 -->
+            <div class="video-card" data-categoria="documental">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-campus-virtual.jpg" alt="Campus Virtual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Campus Virtual</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Campus Virtual Inteligente</h3>
+                    <p><strong>Equipo:</strong> UNITIC (Andrés Felipe Corzo, Juan Sebastián Jiménez)</p>
+                    <div class="card-actions"><a href="https://youtu.be/r2AlHVVLbW8" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 3 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-viaje-heroe.png" alt="Viaje del Héroe" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Viaje del Héroe</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>El viaje del Héroe: una estructura narrativa</h3>
+                    <p><strong>Equipo:</strong> LINDIALEX (Oscar Palma, Alejandro Acosta y equipo)</p>
+                    <div class="card-actions"><a href="https://uniminuto0-my.sharepoint.com/personal/oscar_palma_uniminuto_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Foscar%5Fpalma%5Funiminuto%5Fedu%2FDocuments%2FUNA%20NUEVA%20ESTRUCTURA%20NARRATIVA%2Emp4" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 4 -->
+            <div class="video-card" data-categoria="documental">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-pequenos-ciudadanos.jpg" alt="Pequeños Ciudadanos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Pequeños Ciudadanos</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>PSF Pequeños Ciudadanos Responsables</h3>
+                    <p><strong>Equipo:</strong> Christian Piragauta, Michael Charry</p>
+                    <div class="card-actions"><a href="https://youtu.be/IKD17U9K-Tw" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 5 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-semillero-SIFUG.png" alt="Educación Financiera" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Educación Financiera</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Educación Financiera que Transforma Vidas</h3>
+                    <p><strong>Equipo:</strong> Nicolle Gómez (Ecosistema Financiero)</p>
+                    <div class="card-actions"><a href="https://youtube.com/shorts/-lW49tXTTzg" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 6 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-asistente-academico.jpg" alt="Asistente Académico" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Asistente Académico</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Asistente Académico</h3>
+                    <p><strong>Equipo:</strong> Angie Garnica, Alexander Higuera (UNITIC)</p>
+                    <div class="card-actions"><a href="https://drive.google.com/file/d/1L9hvfGQ-3BilPP2gEqD8qXOe8JbvR86h/view" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 7 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-coop-ingenieria.jpg" alt="Cooperatividad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Cooperatividad</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Cooperatividad tecnológica en la ingeniería industrial</h3>
+                    <p><strong>Equipo:</strong> Juan Esteban Calderón, Brayan Jaramillo (PyLog)</p>
+                    <div class="card-actions"><a href="https://youtube.com/shorts/2yUm6cXm8us" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 8 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-mejoramiento-seguridad.jpg" alt="Seguridad" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Seguridad</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Estrategias integrales para el mejoramiento de la seguridad</h3>
+                    <p><strong>Equipo:</strong> Laura González, María Ramírez (SIMATSCON)</p>
+                    <div class="card-actions"><a href="https://youtube.com/shorts/9Z5SjsdgKFQ" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 9 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-comportamiento-de-los-suelos.jpg" alt="Suelos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Suelos</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Comportamiento de los suelos estabilizados con residuos alcalinos</h3>
+                    <p><strong>Equipo:</strong> Karen Carlosama, Ana García, Jordy Roldán (SIMATSCON)</p>
+                    <div class="card-actions"><a href="https://drive.google.com/file/d/1sjdo0xjseOTP4xpQ2SSWvNfULbRJG8Xp/view" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 10 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-Casas-En-Poliestireno-Expandido.jpg" alt="Casas Icopor" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Casas Icopor</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Casas en Poliestireno Expandido (Icopor)</h3>
+                    <p><strong>Equipo:</strong> William Núñez (Civilecs)</p>
+                    <div class="card-actions"><a href="https://youtube.com/shorts/r2wGvp8bba0" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 11 -->
+            <div class="video-card" data-categoria="documental">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-adoquin-con-resina-epoxica.jpg" alt="Adoquín" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Adoquín</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Formulación de un adoquín con resina epóxica</h3>
+                    <p><strong>Equipo:</strong> Tito Rodríguez (Transviales)</p>
+                    <div class="card-actions"><a href="https://youtu.be/SFa7l9_S6aY" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 12 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-Agua-para-campo-alegre.jpg" alt="Agua Campo Alegre" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Agua Campo Alegre</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Agua para Campo Alegre: propuesta de potabilización rural</h3>
+                    <p><strong>Equipo:</strong> Leonardo Valbuena (Civilecs)</p>
+                    <div class="card-actions"><a href="https://youtube.com/shorts/v7lz5BAgHjI" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 13 -->
+            <div class="video-card" data-categoria="documental">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-caucho-reciclado.png" alt="Caucho Reciclado" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Caucho Reciclado</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Documental Corto</span>
+                    <h3>Asfaltos con caucho reciclado en carreteras</h3>
+                    <p><strong>Equipo:</strong> Jhon Isaza, Samuel Bernal (Transviales)</p>
+                    <div class="card-actions"><a href="https://youtu.be/CMevbYOadFk" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+            <!-- OBRA 14 -->
+            <div class="video-card" data-categoria="reel">
+                <div class="video-thumbnail">
+                    <img src="./miniatura-guardianes.jpg" alt="Pequeños Guardianes" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder" style="display:none;"><div class="icon">🎬</div>Pequeños Guardianes</div>
+                    <div class="overlay"></div>
+                </div>
+                <div class="video-info">
+                    <span class="categoria">Reels</span>
+                    <h3>Proyecto Pequeños Guardianes</h3>
+                    <p><strong>Equipo:</strong> Sonia Hernández, Danna Aponte, Paula Durán (SESAJO)</p>
+                    <div class="card-actions"><a href="https://uniminuto0-my.sharepoint.com/:v:/r/personal/sonia_hernandez_uniminuto_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fsonia_hernandez_uniminuto_edu%2FDocuments%2F2026%2FINVESTIGACI%C3%93N%2FVIDEO%20PEQUE%C3%91OS%20GUARDIANES.mp4" target="_blank" class="btn btn-ver">Ver Video</a><a href="#" class="btn btn-votar">Votar</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn-volver">Volver al Inicio</a>
+    </div>
+
+    <script>
+        function filtrar(categoria, event) {
+            const tarjetas = document.querySelectorAll('.video-card');
+            const botones = document.querySelectorAll('.filtro-btn');
+            const contador = document.getElementById('contador');
+            let visibles = 0;
+            botones.forEach(btn => btn.classList.remove('activo'));
+            event.target.classList.add('activo');
+            tarjetas.forEach(t => {
+                if (categoria === 'todas' || t.dataset.categoria === categoria) { t.style.display='block'; visibles++; }
+                else { t.style.display='none'; }
+            });
+            contador.textContent = 'Mostrando ' + visibles + ' obra' + (visibles !== 1 ? 's' : '');
+        }
+    </script>
+</body>
+</html>
