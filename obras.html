@@ -14,7 +14,8 @@
         .gold-bg { background-color: #d4af37; }
         .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2); }
         .filter-btn.active { background-color: #d4af37; color: #0b1325; font-weight: bold; }
-       .thumb { width: 100%; height: 220px; object-fit: cover; object-position: top center; background: linear-gradient(135deg, #1a2744, #0b1325); }
+        /* ARREGLO PARA QUE NO SE CORTE LA CABEZA DE LAS IMÁGENES VERTICALES */
+        .thumb { width: 100%; height: 220px; object-fit: cover; object-position: top center; background: linear-gradient(135deg, #1a2744, #0b1325); }
         .thumb-fallback { display: flex; align-items: center; justify-content: center; font-size: 3rem; }
     </style>
 </head>
@@ -39,8 +40,8 @@
         <div class="gold-bg text-[#0b1325] p-8 rounded-2xl max-w-3xl mx-auto shadow-2xl">
             <h2 class="font-bebas text-4xl mb-4">¡TU VOTO CUENTA!</h2>
             <p class="text-lg mb-6 font-semibold">¿Cuál de estas narrativas territoriales te inspiró más? Ayúdanos a elegir a los ganadores del NARTERIIN FEST 2026.</p>
-            <!-- ⚠️ REEMPLAZA EL '#' CON EL LINK DE TU GOOGLE FORM DE VOTACIÓN CUANDO LO TENGAS -->
-            <a href="#" target="_blank" class="inline-block bg-[#0b1325] text-[#d4af37] font-bold py-4 px-10 rounded-full text-xl hover:bg-white hover:text-[#0b1325] transition shadow-lg">
+            <!-- ✅ LINK DEL FORMULARIO DE MICROSOFT FORMS ACTUALIZADO -->
+            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=64W6sVOiZ0Se6NT47U3zAD_fAPFO1iVPliLHqh1KoTFUQkFVU1lISzE0TEdMMDRZS0hEMkNEWUUwRi4u" target="_blank" class="inline-block bg-[#0b1325] text-[#d4af37] font-bold py-4 px-10 rounded-full text-xl hover:bg-white hover:text-[#0b1325] transition shadow-lg">
                 🗳️ VOTAR POR MI OBRA FAVORITA
             </a>
         </div>
@@ -91,7 +92,7 @@
                         <p class="text-gray-300 text-sm mb-5 flex-grow">👥 ${obra.equipo}</p>
                         <div class="flex gap-3 mt-auto">
                             <a href="${obra.link}" target="_blank" class="flex-1 bg-[#0b1325] text-white text-center py-2 rounded-lg font-semibold hover:bg-[#d4af37] hover:text-[#0b1325] transition border border-[#d4af37]">▶ Ver Video</a>
-                            <a href="#votacion" class="flex-1 gold-bg text-[#0b1325] text-center py-2 rounded-lg font-bold hover:bg-white transition">🗳️ Votar</a>
+                            <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=64W6sVOiZ0Se6NT47U3zAD_fAPFO1iVPliLHqh1KoTFUQkFVU1lISzE0TEdMMDRZS0hEMkNEWUUwRi4u" target="_blank" class="flex-1 gold-bg text-[#0b1325] text-center py-2 rounded-lg font-bold hover:bg-white transition">🗳️ Votar</a>
                         </div>
                     </div>`;
                 galeria.appendChild(card);
